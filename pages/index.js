@@ -2,10 +2,16 @@ import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import { Card } from './Card'
+import { Nav } from './Nav'
 import data from "../data.json";
 
 export default function Home() {
-
+  const user = 'Jeremy Robson';
+  const timeframes =[
+    {title:'Daily'},
+    {title:'Weekly'},
+    {title:'Monthly'}
+  ];
   return (
     <div className={styles.container}>
       <Head>
@@ -15,6 +21,11 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
+        <Nav 
+        timeframes={timeframes} 
+        name={user}
+        />
+        <div className={styles.grid}>
         {data.map(item=>{
           console.log(item)
           return(
@@ -24,6 +35,7 @@ export default function Home() {
               previous={item.timeframes.daily.previous}
               />
           )})}
+        </div>
       </main>
 
       <footer className={styles.footer}>

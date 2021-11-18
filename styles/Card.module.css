@@ -29,6 +29,7 @@
 .card{
     border: 1px;
     border-radius: 5%;
+    margin: 1rem;
 }
 
 .icon{
@@ -93,4 +94,75 @@
 
 .previous{
     color: white;
+}
+
+@media (max-width: 375px) { 
+    .card{
+        border: 1px;
+        border-radius: 5%;
+    }
+
+    .icon{
+        width: 50px;
+        float: right;
+        margin-right: 10px;
+    }
+
+    .card_content{
+        position: relative;
+        background-color: hsl(235, 46%, 20%);
+        margin-top: 35px;
+        z-index: 999;
+        padding: 25px 20px;
+        border: 1px;
+        border-radius: 5%;
+        width: 300px;
+    }
+
+    .card_top{
+        display: flex;
+        justify-content: space-between;
+        width: 260px;
+    }
+
+    .category{
+        font-size: 12px;
+        color: white;
+        font-weight: 500;
+        font-family: 'Rubik', sans-serif;
+    }
+
+    .options{
+        width: 15px;
+        height: 5px;
+        cursor: pointer;
+        margin-top: 3px;
+
+    }
+    .card_head{
+        margin-top: 15px;
+        display: flex;
+        justify-content: space-between;
+    }
+    .current{
+        margin-right: 8px;
+        color: white;
+        font-size: 38px;
+        font-family: 'Rubik', sans-serif;
+        font-weight: 300;
+    }
+
+    .track{
+        color: white;
+        margin-top: 15px;
+        font-size: 10px;
+    }
+
+    .label{
+        color: white;
+    }
+
+    .previous{
+        color: white;
+    }
 }

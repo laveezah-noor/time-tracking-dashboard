@@ -25,10 +25,10 @@ export const Card = ({category,current,previous}) => {
                 <img className={styles.options} src="/icon-ellipsis.svg"/>
             </div>
             <div className={styles.card_head}>
-                <span className={styles.current}>{current+" hrs"}</span>
+                <span className={styles.current}>{current+"hrs"}</span>
                 <div className={styles.track}>
                     <span className={styles.label}>Last Week</span>{" - "}
-                    <span className={styles.previous}>{previous+" hrs"}</span>
+                    <span className={styles.previous}>{previous+"hrs"}</span>
                 </div>
             </div>
             </div>
