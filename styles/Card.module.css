@@ -1,12 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
 
-/* - Light red (work): hsl(15, 100%, 70%) */
-/* - Soft blue (play): hsl(195, 74%, 62%) */
-/* - Light red (study): hsl(348, 100%, 68%) */
-/* - Lime green (exercise): hsl(145, 58%, 55%) */
-/* - Violet (social): hsl(264, 64%, 52%) */
-/* - Soft orange (self care): hsl(43, 84%, 65%) */
-
 .Work{
     background-color: hsl(15, 100%, 70%);
 }
@@ -49,6 +42,10 @@
     width: 200px;
 }
 
+.card_content:hover{
+    background-color: hsl(236, 41%, 34%);
+    cursor: pointer;
+}
 .card_top{
     display: flex;
     justify-content: space-between;
@@ -70,7 +67,6 @@
 
 }
 
-
 .card_head{
     margin-top: 15px;
 }
@@ -83,62 +79,36 @@
 }
 
 .track{
-    color: white;
+    color: hsl(236, 100%, 87%);
     margin-top: 5px;
     font-size: 12px;
 }
 
 .label{
-    color: white;
+    color: hsl(236, 100%, 87%);
 }
 
 .previous{
-    color: white;
+    color: hsl(236, 100%, 87%);
 }
 
 @media (max-width: 375px) { 
-    .card{
-        border: 1px;
-        border-radius: 5%;
-    }
-
-    .icon{
-        width: 50px;
-        float: right;
-        margin-right: 10px;
-    }
-
     .card_content{
-        position: relative;
-        background-color: hsl(235, 46%, 20%);
-        margin-top: 35px;
-        z-index: 999;
-        padding: 25px 20px;
-        border: 1px;
-        border-radius: 5%;
         width: 300px;
     }
 
     .card_top{
-        display: flex;
-        justify-content: space-between;
         width: 260px;
     }
 
     .category{
-        font-size: 12px;
-        color: white;
-        font-weight: 500;
-        font-family: 'Rubik', sans-serif;
+        font-size: 13px;
     }
 
     .options{
         width: 15px;
-        height: 5px;
-        cursor: pointer;
-        margin-top: 3px;
-
     }
+
     .card_head{
         margin-top: 15px;
         display: flex;
@@ -146,23 +116,11 @@
     }
     .current{
         margin-right: 8px;
-        color: white;
-        font-size: 38px;
-        font-family: 'Rubik', sans-serif;
-        font-weight: 300;
     }
 
     .track{
-        color: white;
         margin-top: 15px;
         font-size: 10px;
     }
 
-    .label{
-        color: white;
-    }
-
-    .previous{
-        color: white;
-    }
 }

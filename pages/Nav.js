@@ -1,6 +1,6 @@
 import styles from '../styles/Nav.module.css'
 
-export const Nav = ({timeframes,name}) => {
+export const Nav = ({timeframes,name,onChange}) => {
     return (
         <div className={styles.nav}>
             <div className={styles.nav_head}>
@@ -13,8 +13,13 @@ export const Nav = ({timeframes,name}) => {
                 </div>
             </div>
             <div className={styles.nav_options}>
-            {timeframes.map(item=>{return(
-                <li className={styles.nav_option}>{item.title}</li>
+            {timeframes.map(item=>{
+                console.log(item);
+                return(
+                <li key={item.id}
+                className={item.action?`${styles.nav_option} ${styles.active}`:styles.nav_option}
+                onClick={()=>onChange(item.id)}
+                >{item.title}</li>
             )})}
             </div>
         </div>

@@ -4,14 +4,26 @@ import styles from '../styles/Home.module.css'
 import { Card } from './Card'
 import { Nav } from './Nav'
 import data from "../data.json";
+import { useState } from 'react'
 
 export default function Home() {
   const user = 'Jeremy Robson';
-  const timeframes =[
-    {title:'Daily'},
-    {title:'Weekly'},
-    {title:'Monthly'}
-  ];
+  const [time,setTime] = useState([
+    {id:1, title:'Daily',action:true},
+    {id:2, title:'Weekly',action:false},
+    {id:3, title:'Monthly',action:false}
+  ])
+  const [activeState,setActiveState] = useState(1)
+  const onChange = index =>{
+    setTime(
+      time.map(item => 
+          item.id === index 
+          ? {...item, action : true} 
+          : {...item, action : false} 
+    ))
+        setActiveState(index)
+  }
+  console.log(activeState)
   return (
     <div className={styles.container}>
       <Head>
@@ -22,17 +34,28 @@ export default function Home() {
 
       <main className={styles.main}>
         <Nav 
-        timeframes={timeframes} 
+        timeframes={time} 
+        onChange={onChange}
         name={user}
         />
         <div className={styles.grid}>
         {data.map(item=>{
-          console.log(item)
+          const current = (activeState==1)?item.timeframes.daily.current
+          :(activeState==2)?item.timeframes.weekly.current
+          :(activeState==3)?item.timeframes.monthly.current
+          :null;
+
+          const previous = (activeState==1)?item.timeframes.daily.previous
+          :(activeState==2)?item.timeframes.weekly.previous
+          :(activeState==3)?item.timeframes.monthly.previous
+          :null;
+
           return(
             <Card 
+              key={item.id}
               category={item.title}
-              current={item.timeframes.daily.current}
-              previous={item.timeframes.daily.previous}
+              current={current}
+              previous={previous}
               />
           )})}
         </div>
